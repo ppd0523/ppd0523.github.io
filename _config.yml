@@ -17,7 +17,7 @@ timezone: Asia/Seoul
 # --------------------------
 title: 박동현 연구노트                          # the main title
 
-tagline: 자동화에 미친 사람   # it will display as the sub-title
+tagline: 자동화에 진심인 사람   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
