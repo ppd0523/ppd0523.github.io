@@ -6,7 +6,7 @@ date: 2018-02-11 18:00:00 +0900
 categories: [linux]
 tag: [vim]
 toc: false
-comments: false
+comments: true
 ---
 
 

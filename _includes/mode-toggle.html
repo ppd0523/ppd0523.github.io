@@ -130,6 +130,12 @@
 
       this.updateMermaid();
 
+      var message = {
+            type: 'set-theme',
+            theme: 'github-' + this.modeStatus,
+      };
+      var utterances = document.querySelector('iframe');
+      utterances?.contentWindow?.postMessage(message, 'https://utteranc.es');
     } /* flipMode() */
 
   } /* ModeToggle */

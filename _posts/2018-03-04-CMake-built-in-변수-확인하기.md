@@ -6,7 +6,7 @@ date: 2018-03-04 18:00:00 +0900
 categories: [tool]
 tags: [cmake, build]
 toc: false
-comments: false
+comments: true
 ---
 
 CMake 내장 변수를 활용하면 소스코드의 파일 경로를 바꿀 때마다 파일 경로를 수정할 필요가 없다. 
