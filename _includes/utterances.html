@@ -3,15 +3,5 @@
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
-        async onload=checkMode()>
-</script>
-<script>
-        function checkMode(){
-                var message = {
-                type: 'set-theme',
-                theme: 'github-'+toggle.modeStatus,
-                };
-                var utterances = document.querySelector('iframe');
-                utterances?.contentWindow?.postMessage(message, 'https://utteranc.es');
-        }
+        async>
 </script>
