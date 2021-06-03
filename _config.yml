@@ -86,7 +86,7 @@ utterances:
   comments: true  # boolean type, the global switch for posts comments.
   repo: 'ppd0523/ppd0523.github.io'  # Fill with your utterances repo. › e.g) ppd0523/ppd0523.github.io
 
-# paginate: 10
+paginate: 10
 
 # ------------ The following options are not recommended to be modified ------------------
 
