@@ -1,10 +1,9 @@
 ---
 layout: post
 title: CMake built-in 변수 확인하기
-author: Park Donghyeon
 date: 2018-03-04 18:00:00 +0900
-categories: [tool]
-tags: [cmake, build]
+categories: [language, util]
+tags: [cmake, build, cpp]
 toc: false
 comments: true
 ---
@@ -32,5 +31,3 @@ CMAKE_BINARY_DIR
 PROJECT_SOURCE_DIR
 PROJECT_BINARY_DIR
 ```
-
-얘네들은 값이 전부 똑같은데 무슨 차이가 있는지 모르겠다. 알게되면 업데이트 함.

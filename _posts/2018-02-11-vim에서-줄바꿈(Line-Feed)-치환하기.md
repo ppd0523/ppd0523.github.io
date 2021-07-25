@@ -1,10 +1,9 @@
 ---
 layout: post
 title: vim에서 줄바꿈(Line Feed) 치환하기
-author: Park Donghyeon
 date: 2018-02-11 18:00:00 +0900
-categories: [linux]
-tag: [vim]
+categories: [linux, util]
+tag: [vi, vim, editor, replace]
 toc: false
 comments: true
 ---
