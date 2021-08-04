@@ -1,6 +1,6 @@
 ---
 layout: post
-title: D3.js data, enter, exit 이해하기(1)
+title: D3.js data(), enter(), exit() 이해
 date: 2021-07-26 04:00:00 +0900
 categories: [web, front-end]
 tag: [javascript, js, es6, d3, d3.js, data, visualization]
@@ -26,15 +26,7 @@ D3.js를 처음 쓰면 정말 쉽게 데이터를 다룰 수 있다는 것에 �
 * data
 * enter
 * exit
-* join (v6 이상)
 
-<br>
-<br>
-
-## 예시 상황 설정
----
-
-<br>
 
 ```javascript
 /**
@@ -45,7 +37,10 @@ selection.data([data[, key]])
 selection.enter()
 selection.exit()
 ```
-예제를 통해 하나씩 이 함수의 작동 방법을 알아보자.
+
+---
+
+<br>
 
 두 파일을 아래와 같이 만들고 브라우저로 실행하자.
 ```html
@@ -67,6 +62,11 @@ let data0 = [1, 2, 3, 4]
 let data1 = [10, 20, 30, 40]
 let data2 = [1, 2, 3, 4, 5, 6]
 let data3 = [1, 2]
+
+let svg = d3.select("#container")
+    .append("svg")
+        .attr("width", 500)
+        .attr("height", 300);
 
 let texts = svg.selectAll("p")
     .data(data1)
@@ -373,6 +373,49 @@ case1 코드는 `data` 값이 업데이트 될때마다, 막대 그래프의 폭
 
 우리는 `data` 배열에서 가장 오래된 데이터를 버리고 최신 데이터를 추가하는 방식으로 조작하고 있다. 그러니 데이터가 업데이트 될 때마다 오래된 막대가 사라지고, 새로운 막대가 추가되는 것처럼 보이는게 시각적으로 더 좋을 것이다. 이 때 사용되는 것이 `data`에 `key`를 부여하는 것이다.
 
+<br>
 
-... 작성중
+```html
+<!-- case 1 -->
+<!-- 업데이트 전 -->
+<div data="10"></div>  
+<div data="20"></div>
+<div data="30"></div>
+<div data="40"></div>
+```
 
+```html
+<!-- case 1 -->
+<!-- 업데이트 후 -->
+<div data="20"></div>
+<div data="30"></div>
+<div data="40"></div>
+<div data="50"></div>
+```
+위의 case1 같은 경우 4개의 div 엘리먼트가 전부 데이터를 변경한 것으로 보인다.
+
+<br>
+
+```html
+<!-- case 2 -->
+<!-- 업데이트 전 -->
+<div data="10" id="1"></div>  
+<div data="20" id="2"></div>
+<div data="30" id="3"></div>
+<div data="40" id="4"></div>
+```
+
+```html
+<!-- case 2 -->
+<!-- 업데이트 후 -->
+<div data="20" id="2"></div>
+<div data="30" id="3"></div>
+<div data="40" id="4"></div>
+<div data="50" id="5"></div>
+```
+위의 case2 같은 경우 `id="1"`인 div 엘리먼트가 사라지고, `id="5"`인 div 엘리먼트가 새로 생성된 것이다. 하지만 `data` 값만으로 case1과 case2의 상황을 구분할 수 없다. 그래서 `data()` 함수를 사용할 때 `key` 값을 전달하면 case2의 `id` 속성과 같은 역할을 한다.
+
+<br>
+팁
+
+`data()`함수를 사용할 때 `key`를 생략하면 배열의 인덱스를 `key`로 인식한다.
