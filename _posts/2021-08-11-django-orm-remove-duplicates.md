@@ -2,7 +2,7 @@
 layout: post
 title: DJANGO ORM 중복 제거하기
 date: 2021-08-11 06:00:00 +0900
-categories: [web, util]
+categories: [web, backend]
 tag: [django, ORM, query, data, duplicate, remove, delete]
 toc: false
 comments: true
